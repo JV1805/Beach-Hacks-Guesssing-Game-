@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title> The Guessing Game </title>
+<center>
+<h1 style="font-size:300%"> The Guessing Game </h1>
+<br>
+<br>
+<body style="font-size:10">
+
+<script type="text/javascript"> 
+function test(){
+    alert("Hello");
+    $.ajax({
+    
+       url: "test.html",
+       dataType: text,
+       data: { num: $("#myNumber").val()}
+       success: function(actualNum){
+          if ($("#myNumber").val() == actualNum){
+          	alert("Success");
+          } else {
+		  	alert("bad guess");
+          }
+       }
+       error: {}
+ 
+  }
+});
+}
+</script>
+
+<p style="font=size:10"> Number Input </p>
+<form>
+    <input type="text" name="myNumber" Number="20">
+    <button type="button" onclick="test()">enter</button>
+    <br>
+    <br>
+</form>
+</body> 
+</center>
+</head>
+</html>
+
