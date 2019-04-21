@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title> The Guessing Game </title>
+<center>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<h1 style="font-size:300%"> The Guessing Game </h1>
+<br>
+<br>
+</head>
+<body style="font-size:10">
+
+<script type="Text/JavaScript"> 
+function test(){
+ $(document).ready(function(){
+    $.ajax({
+       url: "http://35.235.68.92:3000/test",
+	type: 'GET',
+       dataType: "json",
+       data: { num: $("#myNumber").val()},
+       success: function(actualNum){
+          if ($("#myNumber").val() == actualNum) {
+                alert("Success");
+          } else {
+                alert("bad guess");
+          }
+       },
+	error: function(actualNum){
+	alert(JSON.stringify(actualNum));}
+  })
+ })
+
+};
+
+</script>
+
+<p style="font=size:10"> Number Input </p>
+<form>
+    <input type="text" id="myNumber">
+    <button type="button" onclick="test()">enter</button>
+    <br>
+    <br>
+</form>
+</body> 
+</center>
+</head>
+</html>
+
